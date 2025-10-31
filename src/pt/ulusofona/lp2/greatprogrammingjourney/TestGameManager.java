@@ -1,12 +1,7 @@
 package pt.ulusofona.lp2.greatprogrammingjourney;
 
 import org.junit.jupiter.api.Test;
-
-
-
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestGameManager {
@@ -34,7 +29,6 @@ public class TestGameManager {
         return jogadores;
 
     }//3 jogadores
-
 
     @Test
     public void testeCreateInitialBoard1(){
@@ -122,7 +116,6 @@ public class TestGameManager {
 
         assertArrayEquals(null, gm.getProgrammerInfo(999));
     }
-
 
     @Test
     public void testeGetProgrammerInfoAsStr1(){

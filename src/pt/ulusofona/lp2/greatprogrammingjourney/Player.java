@@ -7,20 +7,16 @@ public class Player {
     String nome, cor, linguagens;
     Boolean emJogo;
 
-    public Player() {
-    }
-
     public Player(int id, int posicao, String nome, String cor, String linguagens) {
         this.id = id;
         this.posicao = posicao;
         this.nome = nome;
         this.cor = cor;
+        this.emJogo = true;
 
         String[] linguasArray = linguagens.split(";");
         Arrays.sort(linguasArray, String.CASE_INSENSITIVE_ORDER);
         this.linguagens = String.join("; ", linguasArray);
-
-        this.emJogo = true;
     }
 
     public int getId() {
@@ -46,8 +42,6 @@ public class Player {
     public void setPosicao(int posicao) {
         this.posicao = posicao;
     }
-
-
 
     @Override
     public String toString() {
