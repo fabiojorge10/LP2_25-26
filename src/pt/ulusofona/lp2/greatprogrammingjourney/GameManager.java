@@ -125,7 +125,7 @@
         public boolean moveCurrentPlayer(int nrSpaces){
             if(nrSpaces<1||nrSpaces>6){return false;}
             Player p= allInfoPlayers.get(currentPlayer[atual]);
-            if(p.getPosicao()+nrSpaces>tamanhoTabuleiro){p.setPosicao(tamanhoTabuleiro-1);return true;}
+            if(p.getPosicao()+nrSpaces>tamanhoTabuleiro){p.setPosicao(tamanhoTabuleiro);return true;}
             p.setPosicao(p.getPosicao()+nrSpaces);
             atual = (atual + 1) % numJogadores;
             rondas++;
@@ -169,7 +169,7 @@
             ArrayList<String> resultado = new ArrayList<>();
 
             for(Player p : listaPlayers){
-                if(p.getPosicao()!=tamanhoTabuleiro-1){
+                if(p.getPosicao()!=tamanhoTabuleiro){
                     resultado.add(p.getNome() + " " + p.getPosicao());
                 }
             }

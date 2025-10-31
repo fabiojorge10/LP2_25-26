@@ -140,7 +140,7 @@ public class TestGameManager {
         int boardSize = 7;
         gm.createInitialBoard(jogadoresValidos(), boardSize);
 
-        assertEquals("", gm.getProgrammerInfoAsStr(999));
+        assertEquals(null, gm.getProgrammerInfoAsStr(999));
     }
 
     @Test
@@ -204,9 +204,15 @@ public class TestGameManager {
         int boardSize = 7;
         gm.createInitialBoard(jogadoresValidos(), boardSize);
 
-        gm.moveCurrentPlayer(6);
+        gm.moveCurrentPlayer(5);
+        gm.gameIsOver();
+
         gm.moveCurrentPlayer(3);
+        gm.gameIsOver();
+
         gm.moveCurrentPlayer(4);
+        gm.gameIsOver();
+
         gm.moveCurrentPlayer(6);
         gm.gameIsOver();
 
