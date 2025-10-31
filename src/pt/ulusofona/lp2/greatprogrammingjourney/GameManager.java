@@ -21,6 +21,9 @@
 
 
         public boolean createInitialBoard(String[][] playerInfo, int worldSize){
+            listaPlayers.clear();
+            allInfoPlayers.clear();
+
             numJogadores = playerInfo.length;
             if(numJogadores<=1 || numJogadores>4){return false;}
             currentPlayer = new int[numJogadores];
@@ -114,9 +117,7 @@
         }
 
         public String getProgrammerInfoAsStr(int id){
-
-
-            if(!allInfoPlayers.containsKey(id)){return "";}
+            if(!allInfoPlayers.containsKey(id)){return null;}
             return allInfoPlayers.get(id).toString();
         }
 
@@ -135,7 +136,7 @@
 
         public boolean gameIsOver(){
             for(Player p: listaPlayers){
-                if(p.getPosicao()==tamanhoTabuleiro-1){
+                if(p.getPosicao()==tamanhoTabuleiro){
                     vencedor=p.getNome();
                     rondas++;
                     return true;

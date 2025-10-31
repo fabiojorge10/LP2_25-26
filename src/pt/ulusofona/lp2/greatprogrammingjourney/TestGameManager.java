@@ -66,7 +66,7 @@ public class TestGameManager {
         String[] result = new String[1];
 
         result[0]="1,2,3";
-        assertArrayEquals(result, gm.getSlotInfo(0));
+        assertArrayEquals(result, gm.getSlotInfo(1));
     }
 
     @Test
@@ -108,7 +108,7 @@ public class TestGameManager {
         String[] str = new String[4];
         str[0] = "1";
         str[1] = "Ana";
-        str[2] = "Java;Python";
+        str[2] = "Java; Python";
         str[3] = "Red";
 
         assertArrayEquals(str, gm.getProgrammerInfo(1));
@@ -130,7 +130,7 @@ public class TestGameManager {
         int boardSize = 7;
         gm.createInitialBoard(jogadoresValidos(), boardSize);
 
-        String s = "1 | Ana | 0 | Java;Python | Em Jogo";
+        String s = "1 | Ana | 1 | Java; Python | Em Jogo";
         assertEquals(s, gm.getProgrammerInfoAsStr(1));
     }
 
@@ -151,7 +151,7 @@ public class TestGameManager {
 
         gm.moveCurrentPlayer(3);
 
-        String s = "1 | Ana | 3 | Java;Python | Em Jogo";
+        String s = "1 | Ana | 4 | Java; Python | Em Jogo";
         assertEquals(s, gm.getProgrammerInfoAsStr(1));
 
     }
@@ -222,8 +222,8 @@ public class TestGameManager {
         str.add("Ana");
         str.add("");
         str.add("RESTANTES");
-        str.add("Clara 4");
-        str.add("Bruno 3");
+        str.add("Clara 5");
+        str.add("Bruno 4");
 
 
 
