@@ -23,7 +23,7 @@
             allInfoPlayers.clear();
 
             numJogadores = playerInfo.length;
-            if(numJogadores<=1 || numJogadores>4){return false;}
+            if(numJogadores<=1 || numJogadores>4){return false;}//----------
             currentPlayer = new int[numJogadores];
             List<String> cores = new ArrayList<>(Arrays.asList("Purple", "Green", "Blue", "Red"));
             List<Integer> idJogadores= new ArrayList<>();
@@ -32,14 +32,14 @@
                     String[] dados = playerInfo[i];
 
                     int id= Integer.parseInt(dados[0]);
-                    if(id<0 || idJogadores.contains(id)){return false;}
+                    if(id<0 || idJogadores.contains(id)){return false;}//----------
 
                     String nome = dados[1];
-                    if(nome.isBlank() || nome.isEmpty()){return false;}
+                    if(nome.isBlank() || nome.isEmpty()){return false;}//----------
 
                     String linguagens = dados[2];
                     String cor = dados[3];
-                    if(!cores.contains(cor)){return false;}
+                    if(!cores.contains(cor)){return false;}//----------
                     cores.remove(cor);
 
                     currentPlayer[cont]=id;
@@ -50,7 +50,7 @@
                     idJogadores.add(id);
                     cont++;
             }
-            if(worldSize<=numJogadores*2){return false;}
+            if(worldSize<numJogadores*2){return false;}
             tamanhoTabuleiro= worldSize;
             return true;
         }
