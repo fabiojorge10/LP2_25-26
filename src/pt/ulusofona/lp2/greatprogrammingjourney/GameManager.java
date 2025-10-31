@@ -35,7 +35,7 @@
 
 
                     int id= Integer.parseInt(dados[0]);
-                    if(id<0 || idJogadores.contains(id)){return false;}
+                    if(id<0 || idJogadores.contains(id)){return false;}           //aaaa
 
                     String nome = dados[1];
                     if(nome.isBlank() || nome.isEmpty()){return false;}
@@ -57,7 +57,7 @@
 
 
             }
-            if(worldSize<numJogadores*2){return false;}
+            if(worldSize<=numJogadores*2){return false;}
 
             tamanhoTabuleiro= worldSize;
             return true;
