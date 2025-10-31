@@ -8,16 +8,16 @@
 
     public class GameManager {
 
-        public List<Player> listaPlayers = new ArrayList<>();
-        public HashMap<Integer,Player> allInfoPlayers = new HashMap<>();
+        private List<Player> listaPlayers = new ArrayList<>();
+        private HashMap<Integer,Player> allInfoPlayers = new HashMap<>();
 
 
-        public int tamanhoTabuleiro;
-        public int numJogadores;
-        public int[] currentPlayer;
-        public int atual = 0;
-        public int rondas = 0;
-        public String vencedor;
+        private int tamanhoTabuleiro;
+        private int numJogadores;
+        private int[] currentPlayer;
+        private int atual = 0;
+        private int rondas = 0;
+        private String vencedor;
 
 
         public boolean createInitialBoard(String[][] playerInfo, int worldSize){
