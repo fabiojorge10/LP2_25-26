@@ -1,5 +1,7 @@
 package pt.ulusofona.lp2.greatprogrammingjourney;
 
+import java.util.Arrays;
+
 public class Player {
     int id, posicao;
     String nome, cor, linguagens;
@@ -13,7 +15,11 @@ public class Player {
         this.posicao = posicao;
         this.nome = nome;
         this.cor = cor;
-        this.linguagens = linguagens;
+
+        String[] linguasArray = linguagens.split(";");
+        Arrays.sort(linguasArray, String.CASE_INSENSITIVE_ORDER);
+        this.linguagens = String.join("; ", linguasArray);
+
         this.emJogo = true;
     }
 

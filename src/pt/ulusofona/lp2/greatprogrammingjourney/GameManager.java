@@ -22,6 +22,7 @@
 
         public boolean createInitialBoard(String[][] playerInfo, int worldSize){
             numJogadores = playerInfo.length;
+            if(numJogadores<=1 || numJogadores>4){return false;}
             currentPlayer = new int[numJogadores];
             List<String> cores = new ArrayList<>(Arrays.asList("Purple", "Green", "Blue", "Red"));
             List<Integer> idJogadores= new ArrayList<>();
@@ -44,7 +45,7 @@
 
                     currentPlayer[cont]=id;
 
-                    Player p = new Player(id, 0, nome, cor, linguagens);
+                    Player p = new Player(id, 1, nome, cor, linguagens);
                     listaPlayers.add(p);
                     allInfoPlayers.put(id, p);
                     idJogadores.add(id);
@@ -62,7 +63,7 @@
 
         public String[] getSlotInfo(int pos){
             String[] result = new String[1];
-            if(pos<0 || pos>tamanhoTabuleiro-1){return null;}
+            if(pos<=0 || pos>tamanhoTabuleiro-1){return null;}
 
             int cont=0;
             ArrayList<Integer> lista = new ArrayList<>();
