@@ -1,9 +1,11 @@
 package pt.ulusofona.lp2.greatprogrammingjourney;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -61,8 +63,10 @@ public class TestGameManager {
         gm = new GameManager();
         int boardSize = 7;
         gm.createInitialBoard(jogadoresValidos(), boardSize);
+        String[] result = new String[1];
 
-        assertEquals("1,2,3", gm.getSlotInfo(0));
+        result[0]="1,2,3";
+        assertArrayEquals(result, gm.getSlotInfo(0));
     }
 
     @Test
@@ -71,7 +75,18 @@ public class TestGameManager {
         int boardSize = 7;
         gm.createInitialBoard(jogadoresValidos(), boardSize);
 
-        assertEquals("", gm.getSlotInfo(1));
+        String[] result = new String[1];
+        result[0]="";
+        assertArrayEquals(result, gm.getSlotInfo(2));
+    }
+
+    @Test
+    public void testeGetSlotInfo3(){
+        gm = new GameManager();
+        int boardSize = 7;
+        gm.createInitialBoard(jogadoresValidos(), boardSize);
+
+        assertArrayEquals(null, gm.getSlotInfo(999));
     }
 
     @Test
@@ -212,9 +227,8 @@ public class TestGameManager {
 
 
 
-        assertEquals(str,  gm.getGameResults());
+    assertEquals(str,  gm.getGameResults());
 
     }
 
 }
-

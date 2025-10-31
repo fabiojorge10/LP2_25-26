@@ -6,7 +6,6 @@ public class Player {
     Boolean emJogo;
 
     public Player() {
-
     }
 
     public Player(int id, int posicao, String nome, String cor, String linguagens) {
