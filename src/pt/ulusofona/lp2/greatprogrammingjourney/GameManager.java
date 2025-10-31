@@ -100,6 +100,7 @@
         public String[] getProgrammerInfo(int id){
             if(!allInfoPlayers.containsKey(id)){return null;}
 
+
             Player p = allInfoPlayers.get(id);
             String[] result = new String[4];
 
