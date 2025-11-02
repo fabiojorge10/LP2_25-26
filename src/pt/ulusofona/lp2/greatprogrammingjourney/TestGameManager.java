@@ -42,7 +42,7 @@ public class TestGameManager {
         boolean x = gm.createInitialBoard(jogadoresValidos(), boardSize);
         assertTrue(x);
 
-    }
+    }// criar
 
     @Test
     public void testeCreateInitialBoard2(){
