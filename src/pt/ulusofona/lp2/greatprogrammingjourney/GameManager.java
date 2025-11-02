@@ -10,6 +10,8 @@
 
         private List<Player> listaPlayers = new ArrayList<>();
         private HashMap<Integer,Player> allInfoPlayers = new HashMap<>();
+        private List<Integer> idJogadores= new ArrayList<>();
+
 
         private int tamanhoTabuleiro;
         private int numJogadores;
@@ -21,12 +23,12 @@
         public boolean createInitialBoard(String[][] playerInfo, int worldSize){
             listaPlayers.clear();
             allInfoPlayers.clear();
+            idJogadores.clear();
 
             numJogadores = playerInfo.length;
             if(numJogadores<=1 || numJogadores>4){return false;}//----------
             currentPlayer = new int[numJogadores];
             List<String> cores = new ArrayList<>(Arrays.asList("Purple", "Green", "Blue", "Brown"));
-            List<Integer> idJogadores= new ArrayList<>();
             int cont=0;
             for(int i=0;i<numJogadores;i++){
                     String[] dados = playerInfo[i];
