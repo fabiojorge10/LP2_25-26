@@ -9,22 +9,25 @@ public class TestGameManager {
     GameManager gm;
 
     public String[][] jogadoresValidos(){
-        String[][] jogadores = new String[3][4];
+        String[][] jogadores = new String[3][5];
 
         jogadores[0][0] = "1";
         jogadores[0][1] = "Ana";
         jogadores[0][2] = "Java;Python";
         jogadores[0][3] = "Brown";
+        jogadores[0][4] = "1";
 
         jogadores[1][0] = "2";
         jogadores[1][1] = "Bruno";
         jogadores[1][2] = "C;C++";
         jogadores[1][3] = "Blue";
+        jogadores[1][4] = "1";
 
         jogadores[2][0] = "3";
         jogadores[2][1] = "Clara";
         jogadores[2][2] = "JavaScript";
         jogadores[2][3] = "Green";
+        jogadores[2][4] = "1";
 
         return jogadores;
 
