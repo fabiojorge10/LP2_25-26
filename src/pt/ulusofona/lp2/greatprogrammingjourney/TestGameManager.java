@@ -9,25 +9,49 @@ public class TestGameManager {
     GameManager gm;
 
     public String[][] jogadoresValidos(){
-        String[][] jogadores = new String[3][5];
+        String[][] jogadores = new String[3][4];
 
         jogadores[0][0] = "1";
         jogadores[0][1] = "Ana";
         jogadores[0][2] = "Java;Python";
         jogadores[0][3] = "Brown";
-        jogadores[0][4] = "1";
 
         jogadores[1][0] = "2";
         jogadores[1][1] = "Bruno";
         jogadores[1][2] = "C;C++";
         jogadores[1][3] = "Blue";
-        jogadores[1][4] = "1";
 
         jogadores[2][0] = "3";
         jogadores[2][1] = "Clara";
         jogadores[2][2] = "JavaScript";
         jogadores[2][3] = "Green";
-        jogadores[2][4] = "1";
+
+        return jogadores;
+
+    }//3 jogadores
+
+    public String[][] jogadoresValidos2(){
+        String[][] jogadores = new String[4][4];
+
+        jogadores[0][0] = "1";
+        jogadores[0][1] = "Ana";
+        jogadores[0][2] = "Java;Python";
+        jogadores[0][3] = "Brown";
+
+        jogadores[1][0] = "2";
+        jogadores[1][1] = "Bruno";
+        jogadores[1][2] = "C;C++";
+        jogadores[1][3] = "Blue";
+
+        jogadores[2][0] = "3";
+        jogadores[2][1] = "Clara";
+        jogadores[2][2] = "JavaScript";
+        jogadores[2][3] = "Green";
+
+        jogadores[3][0] = "4";
+        jogadores[3][1] = "John";
+        jogadores[3][2] = "Java;Python";
+        jogadores[3][3] = "Purple";
 
         return jogadores;
 
@@ -42,7 +66,7 @@ public class TestGameManager {
         boolean x = gm.createInitialBoard(jogadoresValidos(), boardSize);
         assertTrue(x);
 
-    }// criar
+    }
 
     @Test
     public void testeCreateInitialBoard2(){
@@ -136,7 +160,7 @@ public class TestGameManager {
         int boardSize = 7;
         gm.createInitialBoard(jogadoresValidos(), boardSize);
 
-        assertEquals(null, gm.getProgrammerInfoAsStr(999));
+        assertNull(gm.getProgrammerInfoAsStr(999));
     }
 
     @Test
@@ -232,5 +256,41 @@ public class TestGameManager {
     assertEquals(str,  gm.getGameResults());
 
     }
+
+    @Test
+    public void testeGetGameResults2(){
+        gm = new GameManager();
+        int boardSize = 15;
+        gm.createInitialBoard(jogadoresValidos2(), boardSize);
+
+        gm.moveCurrentPlayer(5);
+        gm.gameIsOver();
+
+        gm.moveCurrentPlayer(3);
+        gm.gameIsOver();
+
+        gm.moveCurrentPlayer(4);
+        gm.gameIsOver();
+
+        gm.moveCurrentPlayer(3);
+        gm.gameIsOver();
+
+        gm.moveCurrentPlayer(1);
+        gm.gameIsOver();
+
+        gm.moveCurrentPlayer(1);
+        gm.gameIsOver();
+
+        gm.moveCurrentPlayer(1);
+        gm.gameIsOver();
+
+        gm.moveCurrentPlayer(1);
+        gm.gameIsOver();
+
+        assertEquals(gm.getProgrammerInfoAsStr(4), "4 | John | 5 | Java; Python | Em Jogo");
+
+    }
+
+
 
 }

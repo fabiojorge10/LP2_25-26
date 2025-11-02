@@ -44,14 +44,9 @@
                     if(!cores.contains(cor)){return false;}//----------
                     cores.remove(cor);
 
-                    int pos= Integer.parseInt(dados[4]);
-                    if (pos <= 0 || pos > worldSize) {
-                        return false;
-                    }
-
                     currentPlayer[cont]=id;
 
-                    Player p = new Player(id, pos, nome, cor, linguagens);
+                    Player p = new Player(id, 1, nome, cor, linguagens);
                     listaPlayers.add(p);
                     allInfoPlayers.put(id, p);
                     idJogadores.add(id);
