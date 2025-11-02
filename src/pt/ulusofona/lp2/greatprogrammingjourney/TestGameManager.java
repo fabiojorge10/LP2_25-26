@@ -275,8 +275,6 @@ public class TestGameManager {
         gm.moveCurrentPlayer(3);
         gm.gameIsOver();
 
-        gm.moveCurrentPlayer(1);
-        gm.gameIsOver();
 
         gm.moveCurrentPlayer(1);
         gm.gameIsOver();
@@ -286,8 +284,17 @@ public class TestGameManager {
 
         gm.moveCurrentPlayer(1);
         gm.gameIsOver();
+
+        gm.moveCurrentPlayer(1);
+        gm.gameIsOver();
+
+        System.out.println(gm.getProgrammerInfoAsStr(1));
+        System.out.println(gm.getProgrammerInfoAsStr(2));
+        System.out.println(gm.getProgrammerInfoAsStr(3));
 
         assertEquals(gm.getProgrammerInfoAsStr(4), "4 | John | 5 | Java; Python | Em Jogo");
+
+
 
     }
 
