@@ -25,7 +25,7 @@
             numJogadores = playerInfo.length;
             if(numJogadores<=1 || numJogadores>4){return false;}//----------
             currentPlayer = new int[numJogadores];
-            List<String> cores = new ArrayList<>(Arrays.asList("Purple", "Green", "Blue", "Red"));
+            List<String> cores = new ArrayList<>(Arrays.asList("Purple", "Green", "Blue", "Brown"));
             List<Integer> idJogadores= new ArrayList<>();
             int cont=0;
             for(int i=0;i<numJogadores;i++){

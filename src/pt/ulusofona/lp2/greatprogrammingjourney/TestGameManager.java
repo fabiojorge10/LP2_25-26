@@ -14,7 +14,7 @@ public class TestGameManager {
         jogadores[0][0] = "1";
         jogadores[0][1] = "Ana";
         jogadores[0][2] = "Java;Python";
-        jogadores[0][3] = "Red";
+        jogadores[0][3] = "Brown";
 
         jogadores[1][0] = "2";
         jogadores[1][1] = "Bruno";
@@ -103,7 +103,7 @@ public class TestGameManager {
         str[0] = "1";
         str[1] = "Ana";
         str[2] = "Java; Python";
-        str[3] = "Red";
+        str[3] = "Brown";
 
         assertArrayEquals(str, gm.getProgrammerInfo(1));
     }
